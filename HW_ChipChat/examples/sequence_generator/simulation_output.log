@@ -1,0 +1,5 @@
+Test case passed: sequence generation
+Test case passed: sequence repetition
+Test case passed: disable sequence generator
+All test cases passed
+sequence_generator_tb.v:83: $finish called at 195000 (1ps)

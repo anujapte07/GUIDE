@@ -1,0 +1,45 @@
+VCD info: dumpfile my_design.vcd opened for output.
+Results for die_select 00:
+  Rolled           1:        242 times
+  Rolled           2:        265 times
+  Rolled           3:        246 times
+  Rolled           4:        247 times
+Results for die_select 01:
+  Rolled           1:        203 times
+  Rolled           2:        168 times
+  Rolled           3:        177 times
+  Rolled           4:        204 times
+  Rolled           5:        107 times
+  Rolled           6:        141 times
+Results for die_select 10:
+  Rolled           1:        117 times
+  Rolled           2:        106 times
+  Rolled           3:        148 times
+  Rolled           4:        129 times
+  Rolled           5:        103 times
+  Rolled           6:        130 times
+  Rolled           7:        137 times
+  Rolled           8:        130 times
+Results for die_select 11:
+  Rolled           1:         56 times
+  Rolled           2:         47 times
+  Rolled           3:         45 times
+  Rolled           4:         60 times
+  Rolled           5:         54 times
+  Rolled           6:         46 times
+  Rolled           7:         40 times
+  Rolled           8:         43 times
+  Rolled           9:         46 times
+  Rolled          10:         57 times
+  Rolled          11:         52 times
+  Rolled          12:         63 times
+  Rolled          13:         49 times
+  Rolled          14:         55 times
+  Rolled          15:         62 times
+  Rolled          16:         50 times
+  Rolled          17:         45 times
+  Rolled          18:         36 times
+  Rolled          19:         48 times
+  Rolled          20:         46 times
+Testbench completed successfully.
+dice_roller_tb.v:106: $finish called at 160020000 (1ps)

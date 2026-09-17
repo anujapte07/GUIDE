@@ -1,0 +1,6 @@
+Test case 1 passed - FSM transitioned to    RED after 0 clock cycles.
+Test case 2 passed - FSM transitioned to  GREEN after 32 clock cycles.
+Test case 3 passed - FSM transitioned to YELLOW after 20 clock cycles.
+Test case 4 passed - FSM transitioned to    RED after 7 clock cycles.
+All test cases passed!
+traffic_light_tb.v:79: $finish called at 610 (1ps)

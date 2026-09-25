@@ -1,0 +1,7 @@
+$ iverilog -Wall -Winfloop -Wno-timescale -g2012 -s tb_sequence_detector -o iter0_response0.vvp iter0_response0.sv /home/claude/HW_AutoChip/examples/sequence_detector/sequence_detector_tb.v
+return code: 0
+
+STDERR:
+
+STDOUT:
+

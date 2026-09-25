@@ -1,0 +1,7 @@
+$ iverilog -Wall -Winfloop -Wno-timescale -g2012 -s tb_dice_roller -o iter0_response0.vvp iter0_response0.sv /home/claude/HW_AutoChip/examples/dice_roller/dice_roller_tb.v
+return code: 0
+
+STDERR:
+
+STDOUT:
+

@@ -1,0 +1,7 @@
+$ iverilog -Wall -Winfloop -Wno-timescale -g2012 -s tb_binary_to_bcd_converter -o iter0_response0.vvp iter0_response0.sv /home/claude/HW_AutoChip/examples/binary_to_bcd/binary_to_bcd_tb.v
+return code: 0
+
+STDERR:
+
+STDOUT:
+

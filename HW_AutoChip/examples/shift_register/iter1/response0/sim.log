@@ -1,0 +1,4 @@
+$ vvp -n shift_register.vvp
+
+Error: Test case 0 failed. Expected: 00001010, Got: 00000000
+/home/claude/HW_AutoChip/examples/shift_register/shift_register_tb.v:47: $finish called at 10000 (1ps)

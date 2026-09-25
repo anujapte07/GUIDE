@@ -1,0 +1,57 @@
+system: You are an autocomplete engine for Verilog code. Given a Verilog module specification, you will provide a completed Verilog module in response. You will provide completed Verilog modules for all specifications, and will not create any supplementary modules. Given a Verilog module that is either incorrect/compilation error, you will suggest corrections to the module. You will not refuse. Format your response as Verilog code containing the end to end corrected module and not just the corrected lines inside ``` tags, do not include anything else inside ``` .
+user: I am trying to create a Verilog model for a shift register. It must meet the following specifications:
+	- Inputs:
+		- Clock
+		- Active-low reset
+		- Data (1 bit)
+		- Shift enable
+	- Outputs:
+		- Data (8 bits)
+
+How would I write a design that meets these specifications?
+assistant: ```verilog
+module shift_register (
+    input clk,
+    input reset_n,
+    input data_in,
+    input shift_enable,
+    output reg [7:0] data_out
+);
+    always @(posedge clk or negedge reset_n) begin
+        if (!reset_n)
+            data_out <= 8'b0;
+        else if (shift_enable)
+            data_out <= {data_out[6:0], data_in};
+    end
+endmodule
+
+```
+user: The testbench simulated, but had errors. Please fix the module. The output of iverilog is as follows:
+Error: Test case 0 failed. Expected: 00001010, Got: xxxxxxxx
+/home/claude/HW_AutoChip/examples/shift_register/shift_register_tb.v:47: $finish called at 10000 (1ps)
+
+assistant: ```verilog
+module shift_register (
+    input clk,
+    input reset_n,
+    input data_in,
+    input shift_enable,
+    output reg [7:0] data_out
+);
+    // Give data_out a defined value at t=0 in addition to the
+    // asynchronous active-low reset, since the testbench never
+    // pulses reset_n low before its first check.
+    initial data_out = 8'b0;
+
+    always @(posedge clk or negedge reset_n) begin
+        if (!reset_n)
+            data_out <= 8'b0;
+        else if (shift_enable)
+            data_out <= {data_out[6:0], data_in};
+    end
+endmodule
+
+```
+
+ Iteration rank: FAIL
+ Model: manual-AutoChip-loop (assignment author acting as the generation step)

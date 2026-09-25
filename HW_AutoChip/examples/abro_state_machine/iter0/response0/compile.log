@@ -1,0 +1,7 @@
+$ iverilog -Wall -Winfloop -Wno-timescale -g2012 -s tb_abro_state_machine -o iter0_response0.vvp iter0_response0.sv /home/claude/HW_AutoChip/examples/abro_state_machine/abro_state_machine_tb.v
+return code: 0
+
+STDERR:
+
+STDOUT:
+

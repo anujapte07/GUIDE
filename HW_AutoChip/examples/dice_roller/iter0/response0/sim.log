@@ -1,0 +1,47 @@
+$ vvp -n dice_roller.vvp
+
+VCD info: dumpfile my_design.vcd opened for output.
+Results for die_select 00:
+  Rolled           1:        245 times
+  Rolled           2:        253 times
+  Rolled           3:        251 times
+  Rolled           4:        251 times
+Results for die_select 01:
+  Rolled           1:        164 times
+  Rolled           2:        170 times
+  Rolled           3:        165 times
+  Rolled           4:        170 times
+  Rolled           5:        164 times
+  Rolled           6:        167 times
+Results for die_select 10:
+  Rolled           1:        121 times
+  Rolled           2:        128 times
+  Rolled           3:        125 times
+  Rolled           4:        125 times
+  Rolled           5:        127 times
+  Rolled           6:        125 times
+  Rolled           7:        126 times
+  Rolled           8:        123 times
+Results for die_select 11:
+  Rolled           1:         47 times
+  Rolled           2:         51 times
+  Rolled           3:         52 times
+  Rolled           4:         51 times
+  Rolled           5:         52 times
+  Rolled           6:         51 times
+  Rolled           7:         51 times
+  Rolled           8:         50 times
+  Rolled           9:         51 times
+  Rolled          10:         50 times
+  Rolled          11:         50 times
+  Rolled          12:         52 times
+  Rolled          13:         52 times
+  Rolled          14:         52 times
+  Rolled          15:         50 times
+  Rolled          16:         51 times
+  Rolled          17:         47 times
+  Rolled          18:         48 times
+  Rolled          19:         47 times
+  Rolled          20:         45 times
+Testbench completed successfully.
+/home/claude/HW_AutoChip/examples/dice_roller/dice_roller_tb.v:106: $finish called at 160020000 (1ps)

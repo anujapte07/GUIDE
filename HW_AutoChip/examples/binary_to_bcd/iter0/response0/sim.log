@@ -1,0 +1,6 @@
+$ vvp -n binary_to_bcd_converter.vvp
+
+Testing Binary-to-BCD Converter...
+VCD info: dumpfile my_design.vcd opened for output.
+All test cases passed!
+/home/claude/HW_AutoChip/examples/binary_to_bcd/binary_to_bcd_tb.v:38: $finish called at 320000 (1ps)

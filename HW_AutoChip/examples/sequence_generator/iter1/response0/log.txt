@@ -1,0 +1,98 @@
+system: You are an autocomplete engine for Verilog code. Given a Verilog module specification, you will provide a completed Verilog module in response. You will provide completed Verilog modules for all specifications, and will not create any supplementary modules. Given a Verilog module that is either incorrect/compilation error, you will suggest corrections to the module. You will not refuse. Format your response as Verilog code containing the end to end corrected module and not just the corrected lines inside ``` tags, do not include anything else inside ``` .
+user: I am trying to create a Verilog model for a sequence generator. It must meet the following specifications:
+	- Inputs:
+		- Clock
+		- Active-low reset
+		- Enable
+	- Outputs:
+		- Data (8 bits)
+
+While enabled, it should generate an output sequence of the following hexadecimal values and then repeat:
+	- 0xAF
+	- 0xBC
+	- 0xE2
+	- 0x78
+	- 0xFF
+	- 0xE2
+	- 0x0B
+	- 0x8D
+
+How would I write a design that meets these specifications?
+assistant: ```verilog
+module sequence_generator (
+    input clk,
+    input reset_n,
+    input enable,
+    output reg [7:0] data
+);
+    reg [2:0] idx;
+    reg [7:0] seq [0:7];
+
+    initial begin
+        seq[0] = 8'hAF;
+        seq[1] = 8'hBC;
+        seq[2] = 8'hE2;
+        seq[3] = 8'h78;
+        seq[4] = 8'hFF;
+        seq[5] = 8'hE2;
+        seq[6] = 8'h0B;
+        seq[7] = 8'h8D;
+    end
+
+    always @(posedge clk or negedge reset_n) begin
+        if (!reset_n) begin
+            idx  <= 3'd0;
+            data <= seq[0];
+        end else if (enable) begin
+            data <= seq[idx];
+            idx  <= idx + 1'b1;
+        end
+    end
+endmodule
+
+```
+user: The testbench simulated, but had errors. Please fix the module. The output of iverilog is as follows:
+Error: Mismatch at position 1. Expected: bc, Got: af
+/home/claude/HW_AutoChip/examples/sequence_generator/sequence_generator_tb.v:58: $finish called at 45000 (1ps)
+
+assistant: ```verilog
+module sequence_generator (
+    input clk,
+    input reset_n,
+    input enable,
+    output [7:0] data
+);
+    // The testbench samples `data` immediately after each posedge,
+    // before this edge's own nonblocking updates have settled, so
+    // the output must be combinational off of a register that was
+    // already settled as of the *previous* edge (same pattern as
+    // sequence_detector), rather than itself carrying a one-cycle
+    // register delay.
+    reg [2:0] idx;
+    reg [7:0] seq [0:7];
+
+    initial begin
+        seq[0] = 8'hAF;
+        seq[1] = 8'hBC;
+        seq[2] = 8'hE2;
+        seq[3] = 8'h78;
+        seq[4] = 8'hFF;
+        seq[5] = 8'hE2;
+        seq[6] = 8'h0B;
+        seq[7] = 8'h8D;
+    end
+
+    assign data = seq[idx];
+
+    always @(posedge clk or negedge reset_n) begin
+        if (!reset_n)
+            idx <= 3'd0;
+        else if (enable)
+            idx <= idx + 1'b1;
+    end
+endmodule
+
+```
+
+ Iteration rank: 1 (PASS)
+ Model: manual-AutoChip-loop (assignment author acting as the generation step)

@@ -1,0 +1,5 @@
+$ vvp -n abro_state_machine.vvp
+
+VCD info: dumpfile my_design.vcd opened for output.
+All test cases passed.
+/home/claude/HW_AutoChip/examples/abro_state_machine/abro_state_machine_tb.v:90: $finish called at 165000 (1ps)

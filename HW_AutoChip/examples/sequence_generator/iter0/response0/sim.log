@@ -1,0 +1,4 @@
+$ vvp -n sequence_generator.vvp
+
+Error: Mismatch at position 1. Expected: bc, Got: af
+/home/claude/HW_AutoChip/examples/sequence_generator/sequence_generator_tb.v:58: $finish called at 45000 (1ps)

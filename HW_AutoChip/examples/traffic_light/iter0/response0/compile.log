@@ -1,0 +1,7 @@
+$ iverilog -Wall -Winfloop -Wno-timescale -g2012 -s tb_traffic_light_fsm -o iter0_response0.vvp iter0_response0.sv /home/claude/HW_AutoChip/examples/traffic_light/traffic_light_tb.v
+return code: 0
+
+STDERR:
+
+STDOUT:
+

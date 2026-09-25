@@ -1,0 +1,4 @@
+$ vvp -n lfsr.vvp
+
+Simulation successful. All test cases passed.
+/home/claude/HW_AutoChip/examples/lfsr/lfsr_tb.v:67: $finish called at 2565000 (1ps)

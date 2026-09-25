@@ -1,0 +1,4 @@
+$ vvp -n sequence_detector.vvp
+
+All test cases passed.
+/home/claude/HW_AutoChip/examples/sequence_detector/sequence_detector_tb.v:73: $finish called at 125000 (1ps)

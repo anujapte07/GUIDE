@@ -1,0 +1,4 @@
+$ vvp -n sequence_detector.vvp
+
+Error: Cycle 8, Expected: 1, Got: 0
+/home/claude/HW_AutoChip/examples/sequence_detector/sequence_detector_tb.v:39: $finish called at 85000 (1ps)

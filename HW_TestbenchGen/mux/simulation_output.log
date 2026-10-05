@@ -1,0 +1,28 @@
+$ iverilog -g2012 -o mux/sim.vvp mux/mux2to1.v mux/testbench_final.v
+(compiled with no errors or warnings)
+$ vvp mux/sim.vvp
+Test 1: a=0 b=0 sel=0
+  ✓ Test 1: y = 0 (expected: 0)
+Test 2: a=1 b=0 sel=0
+  ✓ Test 2: y = 1 (expected: 1)
+Test 3: a=0 b=1 sel=0
+  ✓ Test 3: y = 0 (expected: 0)
+Test 4: a=1 b=1 sel=0
+  ✓ Test 4: y = 1 (expected: 1)
+Test 5: a=0 b=0 sel=1
+  ✓ Test 5: y = 0 (expected: 0)
+Test 6: a=1 b=0 sel=1
+  ✓ Test 6: y = 0 (expected: 0)
+Test 7: a=0 b=1 sel=1
+  ✓ Test 7: y = 1 (expected: 1)
+Test 8: a=1 b=1 sel=1
+  ✓ Test 8: y = 1 (expected: 1)
+
+========== Test Summary ==========
+Total Checks: 8
+Passed: 8
+Failed: 0
+ALL TESTS PASSED
+==================================
+
+mux/testbench_final.v:121: $finish called at 80000 (1ps)

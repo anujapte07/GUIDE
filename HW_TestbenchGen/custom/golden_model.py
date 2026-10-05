@@ -1,0 +1,9 @@
+def sat_adder8_golden(a, b, cin):
+    """Reference model of an 8-bit unsigned saturating adder with carry-in.
+
+    sum = min(a + b + cin, 255); sat = 1 only if the true sum exceeds 255.
+    """
+    total = (a & 0xFF) + (b & 0xFF) + (cin & 1)
+    if total > 255:
+        return {'sum': 255, 'sat': 1}
+    return {'sum': total, 'sat': 0}

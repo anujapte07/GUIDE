@@ -1,0 +1,132 @@
+$ iverilog -g2012 -o custom/sim.vvp custom/sat_adder8.v custom/testbench_final.v
+(compiled with no errors or warnings)
+$ vvp custom/sim.vvp
+Test 1: a=00000000 b=00000000 cin=0
+  ✓ Test 1: sum = 0 (expected: 0)
+  ✓ Test 1: sat = 0 (expected: 0)
+Test 2: a=00000000 b=00000000 cin=1
+  ✓ Test 2: sum = 1 (expected: 1)
+  ✓ Test 2: sat = 0 (expected: 0)
+Test 3: a=11111111 b=00000000 cin=0
+  ✓ Test 3: sum = 255 (expected: 255)
+  ✓ Test 3: sat = 0 (expected: 0)
+Test 4: a=00000000 b=11111111 cin=0
+  ✓ Test 4: sum = 255 (expected: 255)
+  ✓ Test 4: sat = 0 (expected: 0)
+Test 5: a=11111111 b=00000000 cin=1
+  ✓ Test 5: sum = 255 (expected: 255)
+  ✓ Test 5: sat = 1 (expected: 1)
+Test 6: a=00000000 b=11111111 cin=1
+  ✓ Test 6: sum = 255 (expected: 255)
+  ✓ Test 6: sat = 1 (expected: 1)
+Test 7: a=11111111 b=11111111 cin=0
+  ✓ Test 7: sum = 255 (expected: 255)
+  ✓ Test 7: sat = 1 (expected: 1)
+Test 8: a=11111111 b=11111111 cin=1
+  ✓ Test 8: sum = 255 (expected: 255)
+  ✓ Test 8: sat = 1 (expected: 1)
+Test 9: a=11111110 b=00000001 cin=0
+  ✓ Test 9: sum = 255 (expected: 255)
+  ✓ Test 9: sat = 0 (expected: 0)
+Test 10: a=00000001 b=11111110 cin=0
+  ✓ Test 10: sum = 255 (expected: 255)
+  ✓ Test 10: sat = 0 (expected: 0)
+Test 11: a=11111110 b=00000000 cin=1
+  ✓ Test 11: sum = 255 (expected: 255)
+  ✓ Test 11: sat = 0 (expected: 0)
+Test 12: a=11111101 b=00000001 cin=1
+  ✓ Test 12: sum = 255 (expected: 255)
+  ✓ Test 12: sat = 0 (expected: 0)
+Test 13: a=11111110 b=00000001 cin=1
+  ✓ Test 13: sum = 255 (expected: 255)
+  ✓ Test 13: sat = 1 (expected: 1)
+Test 14: a=11111110 b=00000010 cin=0
+  ✓ Test 14: sum = 255 (expected: 255)
+  ✓ Test 14: sat = 1 (expected: 1)
+Test 15: a=10000000 b=01111111 cin=0
+  ✓ Test 15: sum = 255 (expected: 255)
+  ✓ Test 15: sat = 0 (expected: 0)
+Test 16: a=10000000 b=01111111 cin=1
+  ✓ Test 16: sum = 255 (expected: 255)
+  ✓ Test 16: sat = 1 (expected: 1)
+Test 17: a=10000000 b=10000000 cin=0
+  ✓ Test 17: sum = 255 (expected: 255)
+  ✓ Test 17: sat = 1 (expected: 1)
+Test 18: a=01111111 b=10000000 cin=0
+  ✓ Test 18: sum = 255 (expected: 255)
+  ✓ Test 18: sat = 0 (expected: 0)
+Test 19: a=00000001 b=00000001 cin=0
+  ✓ Test 19: sum = 2 (expected: 2)
+  ✓ Test 19: sat = 0 (expected: 0)
+Test 20: a=00000001 b=00000000 cin=1
+  ✓ Test 20: sum = 2 (expected: 2)
+  ✓ Test 20: sat = 0 (expected: 0)
+Test 21: a=10101010 b=01010101 cin=0
+  ✓ Test 21: sum = 255 (expected: 255)
+  ✓ Test 21: sat = 0 (expected: 0)
+Test 22: a=01010101 b=10101010 cin=1
+  ✓ Test 22: sum = 255 (expected: 255)
+  ✓ Test 22: sat = 1 (expected: 1)
+Test 23: a=01100100 b=01100100 cin=0
+  ✓ Test 23: sum = 200 (expected: 200)
+  ✓ Test 23: sat = 0 (expected: 0)
+Test 24: a=11001000 b=00110111 cin=0
+  ✓ Test 24: sum = 255 (expected: 255)
+  ✓ Test 24: sat = 0 (expected: 0)
+Test 25: a=00111100 b=10100011 cin=0
+  ✓ Test 25: sum = 223 (expected: 223)
+  ✓ Test 25: sat = 0 (expected: 0)
+Test 26: a=01110010 b=11010111 cin=1
+  ✓ Test 26: sum = 255 (expected: 255)
+  ✓ Test 26: sat = 1 (expected: 1)
+Test 27: a=11100001 b=01111010 cin=0
+  ✓ Test 27: sum = 255 (expected: 255)
+  ✓ Test 27: sat = 1 (expected: 1)
+Test 28: a=00101001 b=00111000 cin=1
+  ✓ Test 28: sum = 98 (expected: 98)
+  ✓ Test 28: sat = 0 (expected: 0)
+Test 29: a=00110010 b=11100110 cin=0
+  ✓ Test 29: sum = 255 (expected: 255)
+  ✓ Test 29: sat = 1 (expected: 1)
+Test 30: a=11111011 b=10100000 cin=0
+  ✓ Test 30: sum = 255 (expected: 255)
+  ✓ Test 30: sat = 1 (expected: 1)
+Test 31: a=11001011 b=10000000 cin=1
+  ✓ Test 31: sum = 255 (expected: 255)
+  ✓ Test 31: sat = 1 (expected: 1)
+Test 32: a=10110110 b=11000000 cin=0
+  ✓ Test 32: sum = 255 (expected: 255)
+  ✓ Test 32: sat = 1 (expected: 1)
+Test 33: a=10101110 b=00101101 cin=1
+  ✓ Test 33: sum = 220 (expected: 220)
+  ✓ Test 33: sat = 0 (expected: 0)
+Test 34: a=10010011 b=11101010 cin=0
+  ✓ Test 34: sum = 255 (expected: 255)
+  ✓ Test 34: sat = 1 (expected: 1)
+Test 35: a=10011110 b=00001100 cin=1
+  ✓ Test 35: sum = 171 (expected: 171)
+  ✓ Test 35: sat = 0 (expected: 0)
+Test 36: a=10111010 b=11101100 cin=1
+  ✓ Test 36: sum = 255 (expected: 255)
+  ✓ Test 36: sat = 1 (expected: 1)
+Test 37: a=00101110 b=11001100 cin=1
+  ✓ Test 37: sum = 251 (expected: 251)
+  ✓ Test 37: sat = 0 (expected: 0)
+Test 38: a=00111011 b=11011001 cin=1
+  ✓ Test 38: sum = 255 (expected: 255)
+  ✓ Test 38: sat = 1 (expected: 1)
+Test 39: a=11001011 b=10000100 cin=1
+  ✓ Test 39: sum = 255 (expected: 255)
+  ✓ Test 39: sat = 1 (expected: 1)
+Test 40: a=11110101 b=00001100 cin=0
+  ✓ Test 40: sum = 255 (expected: 255)
+  ✓ Test 40: sat = 1 (expected: 1)
+
+========== Test Summary ==========
+Total Checks: 80
+Passed: 80
+Failed: 0
+ALL TESTS PASSED
+==================================
+
+custom/testbench_final.v:786: $finish called at 400000 (1ps)

@@ -1,0 +1,142 @@
+`timescale 1ns/1ps
+
+module tb_adder4bit;
+    reg [3:0] a;
+    reg [3:0] b;
+    wire [3:0] sum;
+    wire carry;
+
+    adder4bit uut (.a(a), .b(b), .sum(sum), .carry(carry));
+
+    initial begin
+        // Test 1 (corner)
+        a = 4'b0000; b = 4'b0000;
+        $display("Test 1: a=%b b=%b", a, b);
+
+        // Test 2 (corner)
+        a = 4'b0000; b = 4'b1111;
+        $display("Test 2: a=%b b=%b", a, b);
+
+        // Test 3 (corner)
+        a = 4'b1111; b = 4'b0000;
+        $display("Test 3: a=%b b=%b", a, b);
+
+        // Test 4 (corner)
+        a = 4'b1111; b = 4'b1111;
+        $display("Test 4: a=%b b=%b", a, b);
+
+        // Test 5 (corner)
+        a = 4'b0001; b = 4'b1111;
+        $display("Test 5: a=%b b=%b", a, b);
+
+        // Test 6 (corner)
+        a = 4'b1111; b = 4'b0001;
+        $display("Test 6: a=%b b=%b", a, b);
+
+        // Test 7 (corner)
+        a = 4'b1000; b = 4'b1000;
+        $display("Test 7: a=%b b=%b", a, b);
+
+        // Test 8 (corner)
+        a = 4'b0111; b = 4'b1000;
+        $display("Test 8: a=%b b=%b", a, b);
+
+        // Test 9 (corner)
+        a = 4'b1000; b = 4'b0111;
+        $display("Test 9: a=%b b=%b", a, b);
+
+        // Test 10 (corner)
+        a = 4'b0111; b = 4'b1001;
+        $display("Test 10: a=%b b=%b", a, b);
+
+        // Test 11 (corner)
+        a = 4'b0001; b = 4'b0001;
+        $display("Test 11: a=%b b=%b", a, b);
+
+        // Test 12 (corner)
+        a = 4'b0101; b = 4'b1010;
+        $display("Test 12: a=%b b=%b", a, b);
+
+        // Test 13 (corner)
+        a = 4'b1111; b = 4'b1110;
+        $display("Test 13: a=%b b=%b", a, b);
+
+        // Test 14 (corner)
+        a = 4'b1001; b = 4'b1001;
+        $display("Test 14: a=%b b=%b", a, b);
+
+        // Test 15 (random)
+        a = 4'b1110; b = 4'b1110;
+        $display("Test 15: a=%b b=%b", a, b);
+
+        // Test 16 (random)
+        a = 4'b1110; b = 4'b0110;
+        $display("Test 16: a=%b b=%b", a, b);
+
+        // Test 17 (random)
+        a = 4'b0101; b = 4'b1111;
+        $display("Test 17: a=%b b=%b", a, b);
+
+        // Test 18 (random)
+        a = 4'b0101; b = 4'b0011;
+        $display("Test 18: a=%b b=%b", a, b);
+
+        // Test 19 (random)
+        a = 4'b1110; b = 4'b1001;
+        $display("Test 19: a=%b b=%b", a, b);
+
+        // Test 20 (random)
+        a = 4'b0100; b = 4'b0010;
+        $display("Test 20: a=%b b=%b", a, b);
+
+        // Test 21 (random)
+        a = 4'b0001; b = 4'b1100;
+        $display("Test 21: a=%b b=%b", a, b);
+
+        // Test 22 (random)
+        a = 4'b1110; b = 4'b0101;
+        $display("Test 22: a=%b b=%b", a, b);
+
+        // Test 23 (random)
+        a = 4'b0000; b = 4'b0010;
+        $display("Test 23: a=%b b=%b", a, b);
+
+        // Test 24 (random)
+        a = 4'b0110; b = 4'b0111;
+        $display("Test 24: a=%b b=%b", a, b);
+
+        // Test 25 (random)
+        a = 4'b0000; b = 4'b1110;
+        $display("Test 25: a=%b b=%b", a, b);
+
+        // Test 26 (random)
+        a = 4'b1010; b = 4'b1110;
+        $display("Test 26: a=%b b=%b", a, b);
+
+        // Test 27 (random)
+        a = 4'b1001; b = 4'b1111;
+        $display("Test 27: a=%b b=%b", a, b);
+
+        // Test 28 (random)
+        a = 4'b1110; b = 4'b1000;
+        $display("Test 28: a=%b b=%b", a, b);
+
+        // Test 29 (random)
+        a = 4'b1101; b = 4'b0010;
+        $display("Test 29: a=%b b=%b", a, b);
+
+        // Test 30 (random)
+        a = 4'b1000; b = 4'b1010;
+        $display("Test 30: a=%b b=%b", a, b);
+
+        // Test 31 (random)
+        a = 4'b0011; b = 4'b1100;
+        $display("Test 31: a=%b b=%b", a, b);
+
+        // Test 32 (random)
+        a = 4'b0011; b = 4'b1001;
+        $display("Test 32: a=%b b=%b", a, b);
+
+        $finish;
+    end
+endmodule

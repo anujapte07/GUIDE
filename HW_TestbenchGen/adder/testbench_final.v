@@ -1,0 +1,635 @@
+`timescale 1ns/1ps
+
+module tb_adder4bit;
+    reg [3:0] a;
+    reg [3:0] b;
+    wire [3:0] sum;
+    wire carry;
+
+    adder4bit uut (.a(a), .b(b), .sum(sum), .carry(carry));
+
+    initial begin
+        integer passed_tests;
+        integer failed_tests;
+        passed_tests = 0;
+        failed_tests = 0;
+
+        // Test 1 (corner)
+        a = 4'b0000; b = 4'b0000;
+        $display("Test 1: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd0) begin
+            $display("  ✓ Test 1: sum = %0d (expected: 0)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 1: sum = %0d (expected: 0)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd0) begin
+            $display("  ✓ Test 1: carry = %0d (expected: 0)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 1: carry = %0d (expected: 0)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 2 (corner)
+        a = 4'b0000; b = 4'b1111;
+        $display("Test 2: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd15) begin
+            $display("  ✓ Test 2: sum = %0d (expected: 15)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 2: sum = %0d (expected: 15)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd0) begin
+            $display("  ✓ Test 2: carry = %0d (expected: 0)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 2: carry = %0d (expected: 0)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 3 (corner)
+        a = 4'b1111; b = 4'b0000;
+        $display("Test 3: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd15) begin
+            $display("  ✓ Test 3: sum = %0d (expected: 15)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 3: sum = %0d (expected: 15)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd0) begin
+            $display("  ✓ Test 3: carry = %0d (expected: 0)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 3: carry = %0d (expected: 0)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 4 (corner)
+        a = 4'b1111; b = 4'b1111;
+        $display("Test 4: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd14) begin
+            $display("  ✓ Test 4: sum = %0d (expected: 14)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 4: sum = %0d (expected: 14)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd1) begin
+            $display("  ✓ Test 4: carry = %0d (expected: 1)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 4: carry = %0d (expected: 1)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 5 (corner)
+        a = 4'b0001; b = 4'b1111;
+        $display("Test 5: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd0) begin
+            $display("  ✓ Test 5: sum = %0d (expected: 0)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 5: sum = %0d (expected: 0)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd1) begin
+            $display("  ✓ Test 5: carry = %0d (expected: 1)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 5: carry = %0d (expected: 1)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 6 (corner)
+        a = 4'b1111; b = 4'b0001;
+        $display("Test 6: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd0) begin
+            $display("  ✓ Test 6: sum = %0d (expected: 0)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 6: sum = %0d (expected: 0)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd1) begin
+            $display("  ✓ Test 6: carry = %0d (expected: 1)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 6: carry = %0d (expected: 1)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 7 (corner)
+        a = 4'b1000; b = 4'b1000;
+        $display("Test 7: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd0) begin
+            $display("  ✓ Test 7: sum = %0d (expected: 0)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 7: sum = %0d (expected: 0)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd1) begin
+            $display("  ✓ Test 7: carry = %0d (expected: 1)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 7: carry = %0d (expected: 1)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 8 (corner)
+        a = 4'b0111; b = 4'b1000;
+        $display("Test 8: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd15) begin
+            $display("  ✓ Test 8: sum = %0d (expected: 15)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 8: sum = %0d (expected: 15)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd0) begin
+            $display("  ✓ Test 8: carry = %0d (expected: 0)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 8: carry = %0d (expected: 0)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 9 (corner)
+        a = 4'b1000; b = 4'b0111;
+        $display("Test 9: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd15) begin
+            $display("  ✓ Test 9: sum = %0d (expected: 15)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 9: sum = %0d (expected: 15)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd0) begin
+            $display("  ✓ Test 9: carry = %0d (expected: 0)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 9: carry = %0d (expected: 0)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 10 (corner)
+        a = 4'b0111; b = 4'b1001;
+        $display("Test 10: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd0) begin
+            $display("  ✓ Test 10: sum = %0d (expected: 0)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 10: sum = %0d (expected: 0)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd1) begin
+            $display("  ✓ Test 10: carry = %0d (expected: 1)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 10: carry = %0d (expected: 1)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 11 (corner)
+        a = 4'b0001; b = 4'b0001;
+        $display("Test 11: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd2) begin
+            $display("  ✓ Test 11: sum = %0d (expected: 2)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 11: sum = %0d (expected: 2)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd0) begin
+            $display("  ✓ Test 11: carry = %0d (expected: 0)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 11: carry = %0d (expected: 0)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 12 (corner)
+        a = 4'b0101; b = 4'b1010;
+        $display("Test 12: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd15) begin
+            $display("  ✓ Test 12: sum = %0d (expected: 15)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 12: sum = %0d (expected: 15)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd0) begin
+            $display("  ✓ Test 12: carry = %0d (expected: 0)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 12: carry = %0d (expected: 0)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 13 (corner)
+        a = 4'b1111; b = 4'b1110;
+        $display("Test 13: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd13) begin
+            $display("  ✓ Test 13: sum = %0d (expected: 13)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 13: sum = %0d (expected: 13)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd1) begin
+            $display("  ✓ Test 13: carry = %0d (expected: 1)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 13: carry = %0d (expected: 1)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 14 (corner)
+        a = 4'b1001; b = 4'b1001;
+        $display("Test 14: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd2) begin
+            $display("  ✓ Test 14: sum = %0d (expected: 2)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 14: sum = %0d (expected: 2)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd1) begin
+            $display("  ✓ Test 14: carry = %0d (expected: 1)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 14: carry = %0d (expected: 1)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 15 (random)
+        a = 4'b1110; b = 4'b1110;
+        $display("Test 15: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd12) begin
+            $display("  ✓ Test 15: sum = %0d (expected: 12)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 15: sum = %0d (expected: 12)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd1) begin
+            $display("  ✓ Test 15: carry = %0d (expected: 1)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 15: carry = %0d (expected: 1)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 16 (random)
+        a = 4'b1110; b = 4'b0110;
+        $display("Test 16: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd4) begin
+            $display("  ✓ Test 16: sum = %0d (expected: 4)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 16: sum = %0d (expected: 4)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd1) begin
+            $display("  ✓ Test 16: carry = %0d (expected: 1)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 16: carry = %0d (expected: 1)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 17 (random)
+        a = 4'b0101; b = 4'b1111;
+        $display("Test 17: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd4) begin
+            $display("  ✓ Test 17: sum = %0d (expected: 4)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 17: sum = %0d (expected: 4)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd1) begin
+            $display("  ✓ Test 17: carry = %0d (expected: 1)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 17: carry = %0d (expected: 1)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 18 (random)
+        a = 4'b0101; b = 4'b0011;
+        $display("Test 18: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd8) begin
+            $display("  ✓ Test 18: sum = %0d (expected: 8)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 18: sum = %0d (expected: 8)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd0) begin
+            $display("  ✓ Test 18: carry = %0d (expected: 0)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 18: carry = %0d (expected: 0)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 19 (random)
+        a = 4'b1110; b = 4'b1001;
+        $display("Test 19: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd7) begin
+            $display("  ✓ Test 19: sum = %0d (expected: 7)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 19: sum = %0d (expected: 7)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd1) begin
+            $display("  ✓ Test 19: carry = %0d (expected: 1)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 19: carry = %0d (expected: 1)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 20 (random)
+        a = 4'b0100; b = 4'b0010;
+        $display("Test 20: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd6) begin
+            $display("  ✓ Test 20: sum = %0d (expected: 6)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 20: sum = %0d (expected: 6)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd0) begin
+            $display("  ✓ Test 20: carry = %0d (expected: 0)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 20: carry = %0d (expected: 0)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 21 (random)
+        a = 4'b0001; b = 4'b1100;
+        $display("Test 21: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd13) begin
+            $display("  ✓ Test 21: sum = %0d (expected: 13)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 21: sum = %0d (expected: 13)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd0) begin
+            $display("  ✓ Test 21: carry = %0d (expected: 0)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 21: carry = %0d (expected: 0)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 22 (random)
+        a = 4'b1110; b = 4'b0101;
+        $display("Test 22: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd3) begin
+            $display("  ✓ Test 22: sum = %0d (expected: 3)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 22: sum = %0d (expected: 3)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd1) begin
+            $display("  ✓ Test 22: carry = %0d (expected: 1)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 22: carry = %0d (expected: 1)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 23 (random)
+        a = 4'b0000; b = 4'b0010;
+        $display("Test 23: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd2) begin
+            $display("  ✓ Test 23: sum = %0d (expected: 2)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 23: sum = %0d (expected: 2)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd0) begin
+            $display("  ✓ Test 23: carry = %0d (expected: 0)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 23: carry = %0d (expected: 0)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 24 (random)
+        a = 4'b0110; b = 4'b0111;
+        $display("Test 24: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd13) begin
+            $display("  ✓ Test 24: sum = %0d (expected: 13)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 24: sum = %0d (expected: 13)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd0) begin
+            $display("  ✓ Test 24: carry = %0d (expected: 0)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 24: carry = %0d (expected: 0)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 25 (random)
+        a = 4'b0000; b = 4'b1110;
+        $display("Test 25: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd14) begin
+            $display("  ✓ Test 25: sum = %0d (expected: 14)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 25: sum = %0d (expected: 14)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd0) begin
+            $display("  ✓ Test 25: carry = %0d (expected: 0)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 25: carry = %0d (expected: 0)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 26 (random)
+        a = 4'b1010; b = 4'b1110;
+        $display("Test 26: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd8) begin
+            $display("  ✓ Test 26: sum = %0d (expected: 8)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 26: sum = %0d (expected: 8)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd1) begin
+            $display("  ✓ Test 26: carry = %0d (expected: 1)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 26: carry = %0d (expected: 1)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 27 (random)
+        a = 4'b1001; b = 4'b1111;
+        $display("Test 27: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd8) begin
+            $display("  ✓ Test 27: sum = %0d (expected: 8)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 27: sum = %0d (expected: 8)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd1) begin
+            $display("  ✓ Test 27: carry = %0d (expected: 1)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 27: carry = %0d (expected: 1)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 28 (random)
+        a = 4'b1110; b = 4'b1000;
+        $display("Test 28: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd6) begin
+            $display("  ✓ Test 28: sum = %0d (expected: 6)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 28: sum = %0d (expected: 6)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd1) begin
+            $display("  ✓ Test 28: carry = %0d (expected: 1)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 28: carry = %0d (expected: 1)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 29 (random)
+        a = 4'b1101; b = 4'b0010;
+        $display("Test 29: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd15) begin
+            $display("  ✓ Test 29: sum = %0d (expected: 15)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 29: sum = %0d (expected: 15)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd0) begin
+            $display("  ✓ Test 29: carry = %0d (expected: 0)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 29: carry = %0d (expected: 0)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 30 (random)
+        a = 4'b1000; b = 4'b1010;
+        $display("Test 30: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd2) begin
+            $display("  ✓ Test 30: sum = %0d (expected: 2)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 30: sum = %0d (expected: 2)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd1) begin
+            $display("  ✓ Test 30: carry = %0d (expected: 1)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 30: carry = %0d (expected: 1)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 31 (random)
+        a = 4'b0011; b = 4'b1100;
+        $display("Test 31: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd15) begin
+            $display("  ✓ Test 31: sum = %0d (expected: 15)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 31: sum = %0d (expected: 15)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd0) begin
+            $display("  ✓ Test 31: carry = %0d (expected: 0)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 31: carry = %0d (expected: 0)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test 32 (random)
+        a = 4'b0011; b = 4'b1001;
+        $display("Test 32: a=%b b=%b", a, b);
+        #10; // let outputs settle
+        if (sum === 4'd12) begin
+            $display("  ✓ Test 32: sum = %0d (expected: 12)", sum);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 32: sum = %0d (expected: 12)", sum);
+            failed_tests = failed_tests + 1;
+        end
+        if (carry === 1'd0) begin
+            $display("  ✓ Test 32: carry = %0d (expected: 0)", carry);
+            passed_tests = passed_tests + 1;
+        end else begin
+            $display("  ✗ Test 32: carry = %0d (expected: 0)", carry);
+            failed_tests = failed_tests + 1;
+        end
+
+        // Test summary
+        $display("\n========== Test Summary ==========");
+        $display("Total Checks: %0d", passed_tests + failed_tests);
+        $display("Passed: %0d", passed_tests);
+        $display("Failed: %0d", failed_tests);
+        if (failed_tests == 0) $display("ALL TESTS PASSED");
+        else $display("SOME TESTS FAILED");
+        $display("==================================\n");
+        $finish;
+    end
+endmodule

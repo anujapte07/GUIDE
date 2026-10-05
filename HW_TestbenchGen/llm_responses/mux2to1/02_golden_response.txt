@@ -1,0 +1,7 @@
+```python
+def mux2to1_golden(a, b, sel):
+    """Reference model of a 2-to-1 multiplexer: y = b when sel == 1, else a."""
+    a, b, sel = a & 1, b & 1, sel & 1
+    y = b if sel else a
+    return {'y': y}
+```

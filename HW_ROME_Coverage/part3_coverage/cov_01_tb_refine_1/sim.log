@@ -1,0 +1,6 @@
+VCD info: dumpfile raw.vcd opened for output.
+MISMATCH test 13: a=40 b=40 cin=0 -> sum=80 cout=0 ovf=0 (expected sum=80 cout=0 ovf=1)
+MISMATCH test 17: a=7f b=01 cin=0 -> sum=80 cout=0 ovf=0 (expected sum=80 cout=0 ovf=1)
+tests run: 19, mismatches: 2
+FAILED: 2 of 19 checks
+tb_iter_1.v:73: $finish called at 19 (1s)

@@ -1,0 +1,10 @@
+cov_dump.v:2: warning: timescale for cov_dump inherited from another file.
+mux64_1tb.v:1: ...: The inherited timescale is here.
+warning: Some modules have no timescale. This may cause
+       : confusing timing results.	Affected modules are:
+       :   -- module mux16_1 declared here: mux64_1_rtl.v:30
+       :   -- module mux2_1 declared here: mux64_1_rtl.v:2
+       :   -- module mux32_1 declared here: mux64_1_rtl.v:42
+       :   -- module mux4_1 declared here: mux64_1_rtl.v:6
+       :   -- module mux64_1 declared here: mux64_1_rtl.v:54
+       :   -- module mux8_1 declared here: mux64_1_rtl.v:18

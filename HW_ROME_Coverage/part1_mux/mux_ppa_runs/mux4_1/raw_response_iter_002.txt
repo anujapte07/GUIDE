@@ -1,0 +1,5 @@
+module mux4_1(input [1:0] sel, input [3:0] in, output reg out);
+    always @(*) begin
+        out = in[sel];
+    end
+endmodule

@@ -1,0 +1,7 @@
+module mux32_1(input [4:0] sel, input [31:0] in, output reg out);
+    wire [15:0] lo = in[15:0];
+    wire [15:0] hi = in[31:16];
+    always @(*) begin
+        out = sel[4] ? hi[sel[3:0]] : lo[sel[3:0]];
+    end
+endmodule

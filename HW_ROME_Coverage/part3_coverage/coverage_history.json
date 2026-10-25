@@ -1,0 +1,107 @@
+[
+ {
+  "step": 0,
+  "iteration": "baseline",
+  "changed": "none",
+  "tb_file": "part3_coverage/tb_iter_0.v",
+  "rtl_file": "part3_coverage/rtl_versions/adder8_v0.v",
+  "sim_status": "passed",
+  "note": "RTL accepted by ROME in Part II, baseline TB",
+  "outdir": "part3_coverage/cov_00_baseline",
+  "tests": 8,
+  "sim_passed": true,
+  "rtl_sha": "56ef460590d7",
+  "tb_sha": "a029696a0efa",
+  "n_targets": 41,
+  "line": {
+   "hit": 41,
+   "total": 41,
+   "pct": 100.0
+  },
+  "toggle01": {
+   "hit": 180,
+   "total": 190,
+   "pct": 94.7
+  },
+  "toggle10": {
+   "hit": 167,
+   "total": 190,
+   "pct": 87.9
+  },
+  "logic": {
+   "hit": 123,
+   "total": 142,
+   "pct": 86.6
+  }
+ },
+ {
+  "step": 1,
+  "iteration": "tb_refine_1",
+  "changed": "TB",
+  "tb_file": "part3_coverage/tb_iter_1.v",
+  "rtl_file": "part3_coverage/rtl_versions/adder8_v0.v",
+  "sim_status": "FAILED",
+  "note": "11 targeted tests added",
+  "outdir": "part3_coverage/cov_01_tb_refine_1",
+  "tests": 19,
+  "sim_passed": false,
+  "rtl_sha": "56ef460590d7",
+  "tb_sha": "a98db35822bb",
+  "n_targets": 0,
+  "line": {
+   "hit": 41,
+   "total": 41,
+   "pct": 100.0
+  },
+  "toggle01": {
+   "hit": 190,
+   "total": 190,
+   "pct": 100.0
+  },
+  "toggle10": {
+   "hit": 190,
+   "total": 190,
+   "pct": 100.0
+  },
+  "logic": {
+   "hit": 142,
+   "total": 142,
+   "pct": 100.0
+  }
+ },
+ {
+  "step": 2,
+  "iteration": "rtl_repair_1",
+  "changed": "RTL",
+  "tb_file": "part3_coverage/tb_iter_1.v",
+  "rtl_file": "part3_coverage/rtl_versions/adder8_v1.v",
+  "sim_status": "passed",
+  "note": "ROME loop with frozen tb_iter_1.v",
+  "outdir": "part3_coverage/cov_02_rtl_repair_1",
+  "tests": 19,
+  "sim_passed": true,
+  "rtl_sha": "e1379446f49a",
+  "tb_sha": "a98db35822bb",
+  "n_targets": 0,
+  "line": {
+   "hit": 41,
+   "total": 41,
+   "pct": 100.0
+  },
+  "toggle01": {
+   "hit": 190,
+   "total": 190,
+   "pct": 100.0
+  },
+  "toggle10": {
+   "hit": 190,
+   "total": 190,
+   "pct": 100.0
+  },
+  "logic": {
+   "hit": 153,
+   "total": 153,
+   "pct": 100.0
+  }
+ }
+]

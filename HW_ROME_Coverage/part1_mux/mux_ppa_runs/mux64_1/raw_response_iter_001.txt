@@ -1,0 +1,7 @@
+module mux64_1(input [5:0] sel, input [63:0] in, output reg out);
+    wire [31:0] lo = in[31:0];
+    wire [31:0] hi = in[63:32];
+    always @(*) begin
+        out = sel[5] ? hi[sel[4:0]] : lo[sel[4:0]];
+    end
+endmodule

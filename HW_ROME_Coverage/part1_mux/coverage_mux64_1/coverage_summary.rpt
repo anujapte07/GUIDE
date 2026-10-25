@@ -1,0 +1,328 @@
+                            :::::::::::::::::::::::::::::::::::::::::::::::::::::
+                            ::                                                 ::
+                            ::  Covered -- Verilog Coverage Summarized Report  ::
+                            ::                                                 ::
+                            :::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   GENERAL INFORMATION   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Report generated from CDD file : mux64_1.cdd
+
+* Reported by                    : Instance
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   LINE COVERAGE RESULTS   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Instance                                           Hit/ Miss/Total    Percent hit
+---------------------------------------------------------------------------------------------------------------------
+  $root                                              0/    0/    0      100%
+  tb_mux64_1.dut                                     2/    0/    2      100%
+  tb_mux64_1.dut.m_lo                                2/    0/    2      100%
+  tb_mux64_1.dut.m_lo.m_lo                           2/    0/    2      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_lo                      2/    0/    2      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_lo.m_lo                 2/    0/    2      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_lo.m_lo.m_lo            1/    0/    1      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_lo.m_lo.m_hi            1/    0/    1      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_lo.m_lo.m_out           1/    0/    1      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_lo.m_hi                 2/    0/    2      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_lo.m_hi.m_lo            1/    0/    1      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_lo.m_hi.m_hi            1/    0/    1      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_lo.m_hi.m_out           1/    0/    1      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_lo.m_out                1/    0/    1      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_hi                      2/    0/    2      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_hi.m_lo                 2/    0/    2      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_hi.m_lo.m_lo            1/    0/    1      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_hi.m_lo.m_hi            1/    0/    1      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_hi.m_lo.m_out           1/    0/    1      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_hi.m_hi                 2/    0/    2      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_hi.m_hi.m_lo            1/    0/    1      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_hi.m_hi.m_hi            1/    0/    1      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_hi.m_hi.m_out           1/    0/    1      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_hi.m_out                1/    0/    1      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_out                     1/    0/    1      100%
+  tb_mux64_1.dut.m_lo.m_hi                           2/    0/    2      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_lo                      2/    0/    2      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_lo.m_lo                 2/    0/    2      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_lo.m_lo.m_lo            1/    0/    1      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_lo.m_lo.m_hi            1/    0/    1      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_lo.m_lo.m_out           1/    0/    1      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_lo.m_hi                 2/    0/    2      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_lo.m_hi.m_lo            1/    0/    1      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_lo.m_hi.m_hi            1/    0/    1      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_lo.m_hi.m_out           1/    0/    1      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_lo.m_out                1/    0/    1      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_hi                      2/    0/    2      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_hi.m_lo                 2/    0/    2      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_hi.m_lo.m_lo            1/    0/    1      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_hi.m_lo.m_hi            1/    0/    1      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_hi.m_lo.m_out           1/    0/    1      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_hi.m_hi                 2/    0/    2      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_hi.m_hi.m_lo            1/    0/    1      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_hi.m_hi.m_hi            1/    0/    1      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_hi.m_hi.m_out           1/    0/    1      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_hi.m_out                1/    0/    1      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_out                     1/    0/    1      100%
+  tb_mux64_1.dut.m_lo.m_out                          1/    0/    1      100%
+  tb_mux64_1.dut.m_hi                                2/    0/    2      100%
+  tb_mux64_1.dut.m_hi.m_lo                           2/    0/    2      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_lo                      2/    0/    2      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_lo.m_lo                 2/    0/    2      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_lo.m_lo.m_lo            1/    0/    1      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_lo.m_lo.m_hi            1/    0/    1      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_lo.m_lo.m_out           1/    0/    1      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_lo.m_hi                 2/    0/    2      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_lo.m_hi.m_lo            1/    0/    1      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_lo.m_hi.m_hi            1/    0/    1      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_lo.m_hi.m_out           1/    0/    1      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_lo.m_out                1/    0/    1      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_hi                      2/    0/    2      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_hi.m_lo                 2/    0/    2      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_hi.m_lo.m_lo            1/    0/    1      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_hi.m_lo.m_hi            1/    0/    1      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_hi.m_lo.m_out           1/    0/    1      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_hi.m_hi                 2/    0/    2      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_hi.m_hi.m_lo            1/    0/    1      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_hi.m_hi.m_hi            1/    0/    1      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_hi.m_hi.m_out           1/    0/    1      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_hi.m_out                1/    0/    1      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_out                     1/    0/    1      100%
+  tb_mux64_1.dut.m_hi.m_hi                           2/    0/    2      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_lo                      2/    0/    2      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_lo.m_lo                 2/    0/    2      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_lo.m_lo.m_lo            1/    0/    1      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_lo.m_lo.m_hi            1/    0/    1      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_lo.m_lo.m_out           1/    0/    1      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_lo.m_hi                 2/    0/    2      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_lo.m_hi.m_lo            1/    0/    1      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_lo.m_hi.m_hi            1/    0/    1      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_lo.m_hi.m_out           1/    0/    1      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_lo.m_out                1/    0/    1      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_hi                      2/    0/    2      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_hi.m_lo                 2/    0/    2      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_hi.m_lo.m_lo            1/    0/    1      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_hi.m_lo.m_hi            1/    0/    1      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_hi.m_lo.m_out           1/    0/    1      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_hi.m_hi                 2/    0/    2      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_hi.m_hi.m_lo            1/    0/    1      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_hi.m_hi.m_hi            1/    0/    1      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_hi.m_hi.m_out           1/    0/    1      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_hi.m_out                1/    0/    1      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_out                     1/    0/    1      100%
+  tb_mux64_1.dut.m_hi.m_out                          1/    0/    1      100%
+  tb_mux64_1.dut.m_out                               1/    0/    1      100%
+---------------------------------------------------------------------------------------------------------------------
+  Accumulated                                      125/    0/  125      100%
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   TOGGLE COVERAGE RESULTS   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                           Toggle 0 -> 1                       Toggle 1 -> 0
+Instance                                           Hit/ Miss/Total    Percent hit      Hit/ Miss/Total    Percent hit
+---------------------------------------------------------------------------------------------------------------------
+  $root                                              0/    0/    0      100%             0/    0/    0      100%
+  tb_mux64_1.dut                                    74/    0/   74      100%            74/    0/   74      100%
+  tb_mux64_1.dut.m_lo                               41/    0/   41      100%            41/    0/   41      100%
+  tb_mux64_1.dut.m_lo.m_lo                          24/    0/   24      100%            24/    0/   24      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_lo                     15/    0/   15      100%            15/    0/   15      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_lo.m_lo                10/    0/   10      100%            10/    0/   10      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_lo.m_lo.m_lo            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_lo.m_lo.m_hi            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_lo.m_lo.m_out           4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_lo.m_hi                10/    0/   10      100%            10/    0/   10      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_lo.m_hi.m_lo            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_lo.m_hi.m_hi            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_lo.m_hi.m_out           4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_lo.m_out                4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_hi                     15/    0/   15      100%            15/    0/   15      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_hi.m_lo                10/    0/   10      100%            10/    0/   10      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_hi.m_lo.m_lo            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_hi.m_lo.m_hi            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_hi.m_lo.m_out           4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_hi.m_hi                10/    0/   10      100%            10/    0/   10      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_hi.m_hi.m_lo            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_hi.m_hi.m_hi            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_hi.m_hi.m_out           4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_hi.m_out                4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_out                     4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_lo.m_hi                          24/    0/   24      100%            24/    0/   24      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_lo                     15/    0/   15      100%            15/    0/   15      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_lo.m_lo                10/    0/   10      100%            10/    0/   10      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_lo.m_lo.m_lo            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_lo.m_lo.m_hi            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_lo.m_lo.m_out           4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_lo.m_hi                10/    0/   10      100%            10/    0/   10      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_lo.m_hi.m_lo            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_lo.m_hi.m_hi            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_lo.m_hi.m_out           4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_lo.m_out                4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_hi                     15/    0/   15      100%            15/    0/   15      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_hi.m_lo                10/    0/   10      100%            10/    0/   10      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_hi.m_lo.m_lo            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_hi.m_lo.m_hi            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_hi.m_lo.m_out           4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_hi.m_hi                10/    0/   10      100%            10/    0/   10      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_hi.m_hi.m_lo            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_hi.m_hi.m_hi            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_hi.m_hi.m_out           4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_hi.m_out                4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_out                     4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_lo.m_out                          4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi                               41/    0/   41      100%            41/    0/   41      100%
+  tb_mux64_1.dut.m_hi.m_lo                          24/    0/   24      100%            24/    0/   24      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_lo                     15/    0/   15      100%            15/    0/   15      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_lo.m_lo                10/    0/   10      100%            10/    0/   10      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_lo.m_lo.m_lo            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_lo.m_lo.m_hi            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_lo.m_lo.m_out           4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_lo.m_hi                10/    0/   10      100%            10/    0/   10      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_lo.m_hi.m_lo            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_lo.m_hi.m_hi            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_lo.m_hi.m_out           4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_lo.m_out                4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_hi                     15/    0/   15      100%            15/    0/   15      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_hi.m_lo                10/    0/   10      100%            10/    0/   10      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_hi.m_lo.m_lo            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_hi.m_lo.m_hi            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_hi.m_lo.m_out           4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_hi.m_hi                10/    0/   10      100%            10/    0/   10      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_hi.m_hi.m_lo            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_hi.m_hi.m_hi            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_hi.m_hi.m_out           4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_hi.m_out                4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_out                     4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi.m_hi                          24/    0/   24      100%            24/    0/   24      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_lo                     15/    0/   15      100%            15/    0/   15      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_lo.m_lo                10/    0/   10      100%            10/    0/   10      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_lo.m_lo.m_lo            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_lo.m_lo.m_hi            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_lo.m_lo.m_out           4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_lo.m_hi                10/    0/   10      100%            10/    0/   10      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_lo.m_hi.m_lo            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_lo.m_hi.m_hi            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_lo.m_hi.m_out           4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_lo.m_out                4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_hi                     15/    0/   15      100%            15/    0/   15      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_hi.m_lo                10/    0/   10      100%            10/    0/   10      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_hi.m_lo.m_lo            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_hi.m_lo.m_hi            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_hi.m_lo.m_out           4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_hi.m_hi                10/    0/   10      100%            10/    0/   10      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_hi.m_hi.m_lo            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_hi.m_hi.m_hi            4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_hi.m_hi.m_out           4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_hi.m_out                4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_out                     4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_hi.m_out                          4/    0/    4      100%             4/    0/    4      100%
+  tb_mux64_1.dut.m_out                               4/    0/    4      100%             4/    0/    4      100%
+---------------------------------------------------------------------------------------------------------------------
+  Accumulated                                      784/    0/  784      100%           784/    0/  784      100%
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   COMBINATIONAL LOGIC COVERAGE RESULTS   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                                            Logic Combinations
+Instance                                                              Hit/Miss/Total    Percent hit
+---------------------------------------------------------------------------------------------------------------------
+  $root                                                                 0/   0/   0      100%
+  tb_mux64_1.dut                                                        3/   0/   3      100%
+  tb_mux64_1.dut.m_lo                                                   3/   0/   3      100%
+  tb_mux64_1.dut.m_lo.m_lo                                              3/   0/   3      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_lo                                         3/   0/   3      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_lo.m_lo                                    3/   0/   3      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_lo.m_lo.m_lo                               4/   0/   4      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_lo.m_lo.m_hi                               4/   0/   4      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_lo.m_lo.m_out                              4/   0/   4      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_lo.m_hi                                    3/   0/   3      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_lo.m_hi.m_lo                               4/   0/   4      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_lo.m_hi.m_hi                               4/   0/   4      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_lo.m_hi.m_out                              4/   0/   4      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_lo.m_out                                   4/   0/   4      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_hi                                         3/   0/   3      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_hi.m_lo                                    3/   0/   3      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_hi.m_lo.m_lo                               4/   0/   4      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_hi.m_lo.m_hi                               4/   0/   4      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_hi.m_lo.m_out                              4/   0/   4      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_hi.m_hi                                    3/   0/   3      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_hi.m_hi.m_lo                               4/   0/   4      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_hi.m_hi.m_hi                               4/   0/   4      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_hi.m_hi.m_out                              4/   0/   4      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_hi.m_out                                   4/   0/   4      100%
+  tb_mux64_1.dut.m_lo.m_lo.m_out                                        4/   0/   4      100%
+  tb_mux64_1.dut.m_lo.m_hi                                              3/   0/   3      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_lo                                         3/   0/   3      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_lo.m_lo                                    3/   0/   3      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_lo.m_lo.m_lo                               4/   0/   4      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_lo.m_lo.m_hi                               4/   0/   4      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_lo.m_lo.m_out                              4/   0/   4      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_lo.m_hi                                    3/   0/   3      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_lo.m_hi.m_lo                               4/   0/   4      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_lo.m_hi.m_hi                               4/   0/   4      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_lo.m_hi.m_out                              4/   0/   4      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_lo.m_out                                   4/   0/   4      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_hi                                         3/   0/   3      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_hi.m_lo                                    3/   0/   3      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_hi.m_lo.m_lo                               4/   0/   4      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_hi.m_lo.m_hi                               4/   0/   4      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_hi.m_lo.m_out                              4/   0/   4      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_hi.m_hi                                    3/   0/   3      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_hi.m_hi.m_lo                               4/   0/   4      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_hi.m_hi.m_hi                               4/   0/   4      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_hi.m_hi.m_out                              4/   0/   4      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_hi.m_out                                   4/   0/   4      100%
+  tb_mux64_1.dut.m_lo.m_hi.m_out                                        4/   0/   4      100%
+  tb_mux64_1.dut.m_lo.m_out                                             4/   0/   4      100%
+  tb_mux64_1.dut.m_hi                                                   3/   0/   3      100%
+  tb_mux64_1.dut.m_hi.m_lo                                              3/   0/   3      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_lo                                         3/   0/   3      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_lo.m_lo                                    3/   0/   3      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_lo.m_lo.m_lo                               4/   0/   4      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_lo.m_lo.m_hi                               4/   0/   4      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_lo.m_lo.m_out                              4/   0/   4      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_lo.m_hi                                    3/   0/   3      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_lo.m_hi.m_lo                               4/   0/   4      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_lo.m_hi.m_hi                               4/   0/   4      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_lo.m_hi.m_out                              4/   0/   4      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_lo.m_out                                   4/   0/   4      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_hi                                         3/   0/   3      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_hi.m_lo                                    3/   0/   3      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_hi.m_lo.m_lo                               4/   0/   4      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_hi.m_lo.m_hi                               4/   0/   4      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_hi.m_lo.m_out                              4/   0/   4      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_hi.m_hi                                    3/   0/   3      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_hi.m_hi.m_lo                               4/   0/   4      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_hi.m_hi.m_hi                               4/   0/   4      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_hi.m_hi.m_out                              4/   0/   4      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_hi.m_out                                   4/   0/   4      100%
+  tb_mux64_1.dut.m_hi.m_lo.m_out                                        4/   0/   4      100%
+  tb_mux64_1.dut.m_hi.m_hi                                              3/   0/   3      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_lo                                         3/   0/   3      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_lo.m_lo                                    3/   0/   3      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_lo.m_lo.m_lo                               4/   0/   4      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_lo.m_lo.m_hi                               4/   0/   4      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_lo.m_lo.m_out                              4/   0/   4      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_lo.m_hi                                    3/   0/   3      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_lo.m_hi.m_lo                               4/   0/   4      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_lo.m_hi.m_hi                               4/   0/   4      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_lo.m_hi.m_out                              4/   0/   4      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_lo.m_out                                   4/   0/   4      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_hi                                         3/   0/   3      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_hi.m_lo                                    3/   0/   3      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_hi.m_lo.m_lo                               4/   0/   4      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_hi.m_lo.m_hi                               4/   0/   4      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_hi.m_lo.m_out                              4/   0/   4      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_hi.m_hi                                    3/   0/   3      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_hi.m_hi.m_lo                               4/   0/   4      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_hi.m_hi.m_hi                               4/   0/   4      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_hi.m_hi.m_out                              4/   0/   4      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_hi.m_out                                   4/   0/   4      100%
+  tb_mux64_1.dut.m_hi.m_hi.m_out                                        4/   0/   4      100%
+  tb_mux64_1.dut.m_hi.m_out                                             4/   0/   4      100%
+  tb_mux64_1.dut.m_out                                                  4/   0/   4      100%
+---------------------------------------------------------------------------------------------------------------------
+  Accumulated                                                         345/   0/ 345      100%
+
+

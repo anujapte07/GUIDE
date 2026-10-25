@@ -1,0 +1,16 @@
+// Coverage hole: carry-generate (a&b = 1) never seen at bits 1,2,3,5,6
+//   -> fa*.c1 / ha0.carry never toggle, cout = c1 | c2 never sees c1 = 1, ha0.sum never sees a = b = 1.
+//   Walk a single generate bit through the word so each c1 rises and then falls again.
+check(8'h02, 8'h02, 1'b0);   // generate at bit 1
+check(8'h04, 8'h04, 1'b0);   // generate at bit 2
+check(8'h08, 8'h08, 1'b0);   // generate at bit 3 -> carry from lo adder4 into hi adder4
+check(8'h20, 8'h20, 1'b0);   // generate at bit 5
+check(8'h40, 8'h40, 1'b0);   // generate at bit 6 -> carry into bit 7 (64 + 64 = 128, signed overflow)
+// Coverage hole: ha1.sum combination L=0,R=1 (bit does not propagate but receives a carry) at bits 2,3,5,7
+check(8'h03, 8'h01, 1'b0);   // carry arrives at bit 2 with a[2] = b[2] = 0
+check(8'h07, 8'h01, 1'b0);   // carry arrives at bit 3 with a[3] = b[3] = 0
+check(8'h1F, 8'h01, 1'b0);   // carry arrives at bit 5 with a[5] = b[5] = 0
+check(8'h7F, 8'h01, 1'b0);   // carry arrives at bit 7 with a[7] = b[7] = 0 (127 + 1, signed overflow)
+// Coverage hole: b[6] and b[1] never 1->0, internal s1/c2 nets in lo.fa0 never fall; return everything to 0
+check(8'h01, 8'h00, 1'b1);   // lo.fa0: s1 = 1 with carry-in -> c2 = 1
+check(8'h00, 8'h00, 1'b0);   // all inputs and internal nets fall back to 0

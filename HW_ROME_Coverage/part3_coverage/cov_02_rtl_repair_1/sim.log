@@ -1,0 +1,4 @@
+VCD info: dumpfile raw.vcd opened for output.
+tests run: 19, mismatches: 0
+passed!
+tb_iter_1.v:73: $finish called at 19 (1s)

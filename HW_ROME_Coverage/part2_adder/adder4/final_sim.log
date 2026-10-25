@@ -1,0 +1,5 @@
+$ iverilog -o part2_adder/adder4/final_sim.vvp part2_adder/adder4/adder4__combined.v part2_adder/testbenches/adder4_tb.v
+$ vvp ...
+tests run: 512, mismatches: 0
+passed!
+part2_adder/testbenches/adder4_tb.v:30: $finish called at 512 (1s)

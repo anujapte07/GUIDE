@@ -1,0 +1,7 @@
+module mux16_1(input [3:0] sel, input [15:0] in, output reg out);
+    wire [7:0] lo = in[7:0];
+    wire [7:0] hi = in[15:8];
+    always @(*) begin
+        out = sel[3] ? hi[sel[2:0]] : lo[sel[2:0]];
+    end
+endmodule

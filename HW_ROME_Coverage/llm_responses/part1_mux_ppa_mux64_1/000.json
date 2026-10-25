@@ -1,0 +1,21 @@
+{
+ "section": "part1_mux_ppa_mux64_1",
+ "index": 0,
+ "prompt_sha256": "231eddc9f7a2370f68e49f30fd4e5844ef97667775689fa0f731270fc326a7c8",
+ "messages": [
+  {
+   "role": "user",
+   "content": "You are an autocomplete engine for Verilog-2001 code. Given a Verilog module specification, you will provide a completed Verilog module in response. You will provide completed Verilog modules for all specifications, and will not create any supplementary modules. You will not refuse. You will not generate explanations, comments outside the code, Markdown, or testbenches. IMPORTANT: Output ONLY the Verilog code for the requested module. Do NOT repeat any previous modules. Do NOT wrap the code in triple backticks. Format your response as one complete Verilog module from module declaration through endmodule. Preserve the exact module name and port interface. Preserve functionality required by the testbench. Optimize for lower coarse PPA under Yosys without a liberty file: reduce logic depth, reduce unnecessary cells, share repeated logic, simplify control, avoid redundant muxing, avoid unnecessary intermediate signals, and keep widths disciplined."
+  },
+  {
+   "role": "user",
+   "content": "The following is the testbench that will be used to compile and simulate your module. Do NOT generate a testbench or modify it. Use it only to ensure your module compiles and passes.\n\n```verilog\n`timescale 1ns/1ps\n\nmodule tb_mux64_1;\n\n  reg  [5:0]  sel;\n  reg  [63:0] in;\n  wire        out;\n\n  // DUT\n  mux64_1 dut (\n    .sel(sel),\n    .in (in),\n    .out(out)\n  );\n\n  integer testnum;\n  integer fail_count;\n  reg expected;\n\n  task run_test;\n    input integer tnum;\n    input [63:0]  in_vec;\n    input [5:0]   sel_val;\n    reg           exp;\n    begin\n      // Apply inputs\n      in  = in_vec;\n      sel = sel_val;\n\n      // Allow combinational logic to settle\n      #1;\n\n      // Expected value\n      exp = in_vec[sel_val];\n\n      // Check\n      if (out === exp) begin\n        $display(\"Test %0d passed\", tnum);\n      end else begin\n        $display(\"Test %0d failed (sel=%0d, in=0x%016h, expected=%0b, got=%0b)\",\n                 tnum, sel_val, in_vec, exp, out);\n        fail_count = fail_count + 1;\n      end\n    end\n  endtask\n\n  initial begin\n    // Initialize\n    sel        = 6'd0;\n    in         = 64'd0;\n    testnum    = 0;\n    fail_count = 0;\n\n    // Test 1: all zeros\n    testnum = testnum + 1;\n    run_test(testnum, 64'h0000_0000_0000_0000, 6'd0);\n\n    // Test 2: all ones\n    testnum = testnum + 1;\n    run_test(testnum, 64'hFFFF_FFFF_FFFF_FFFF, 6'd37);\n\n    // Test 3: LSB set\n    testnum = testnum + 1;\n    run_test(testnum, 64'h0000_0000_0000_0001, 6'd0);\n\n    // Test 4: MSB set\n    testnum = testnum + 1;\n    run_test(testnum, 64'h8000_0000_0000_0000, 6'd63);\n\n    // Test 5\u20136: alternating pattern\n    testnum = testnum + 1;\n    run_test(testnum, 64'hAAAA_AAAA_AAAA_AAAA, 6'd1);\n    testnum = testnum + 1;\n    run_test(testnum, 64'hAAAA_AAAA_AAAA_AAAA, 6'd2);\n\n    // Test 7\u20139: mixed pattern\n    testnum = testnum + 1;\n    run_test(testnum, 64'h0123_4567_89AB_CDEF, 6'd4);\n    testnum = testnum + 1;\n    run_test(testnum, 64'h0123_4567_89AB_CDEF, 6'd31);\n    testnum = testnum + 1;\n    run_test(testnum, 64'h0123_4567_89AB_CDEF, 6'd60);\n\n    // Final summary\n    if (fail_count == 0) begin\n      $display(\"All tests passed!\");\n    end else begin\n      $display(\"%0d test(s) failed.\", fail_count);\n    end\n\n    $finish;\n  end\n\nendmodule\n\n```\n"
+  },
+  {
+   "role": "user",
+   "content": "// Generate module mux64_1 with this exact interface:\nmodule mux64_1(input [5:0] sel, input [63:0] in, output reg out);\n// code\nendmodule\n\n\nAlso optimize the module for better coarse Yosys-estimated PPA without a liberty file. Output ONLY the full Verilog-2001 module. Do not use Markdown fences."
+  }
+ ],
+ "response": "module mux64_1(input [5:0] sel, input [63:0] in, output reg out);\n    always @(*) begin\n        out = in[sel];\n    end\nendmodule\n",
+ "responder": "claude-opus-5-5 (Claude Code session; recorded for replay)"
+}

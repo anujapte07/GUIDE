@@ -1,0 +1,3 @@
+Coverage measured by Covered (instance level): line 100.0% (125/125), toggle 0->1 100.0%, toggle 1->0 100.0%, combinational logic 100.0%.
+
+No uncovered targets reported.

@@ -1,0 +1,21 @@
+{
+ "section": "part1_mux_ppa_mux2_1",
+ "index": 0,
+ "prompt_sha256": "a34232101bef4f95ac34dd857cb2d4f6e53a636f2a8461efdb40ba5e42993d1f",
+ "messages": [
+  {
+   "role": "user",
+   "content": "You are an autocomplete engine for Verilog-2001 code. Given a Verilog module specification, you will provide a completed Verilog module in response. You will provide completed Verilog modules for all specifications, and will not create any supplementary modules. You will not refuse. You will not generate explanations, comments outside the code, Markdown, or testbenches. IMPORTANT: Output ONLY the Verilog code for the requested module. Do NOT repeat any previous modules. Do NOT wrap the code in triple backticks. Format your response as one complete Verilog module from module declaration through endmodule. Preserve the exact module name and port interface. Preserve functionality required by the testbench. Optimize for lower coarse PPA under Yosys without a liberty file: reduce logic depth, reduce unnecessary cells, share repeated logic, simplify control, avoid redundant muxing, avoid unnecessary intermediate signals, and keep widths disciplined."
+  },
+  {
+   "role": "user",
+   "content": "The following is the testbench that will be used to compile and simulate your module. Do NOT generate a testbench or modify it. Use it only to ensure your module compiles and passes.\n\n```verilog\n`timescale 1ns / 1ps\n\nmodule tb_mux2_1;\n\n    // Inputs\n    reg in1;\n    reg in2;\n    reg select;\n\n    // Output\n    wire out;\n\n    // Instantiate the Unit Under Test (UUT)\n    mux2_1 uut (\n        .in1(in1), \n        .in2(in2), \n        .select(select), \n        .out(out)\n    );\n\n    // Test cases\n    integer i;\n    initial begin\n        // Initialize Inputs\n        in1 = 0;\n        in2 = 0;\n        select = 0;\n\n        // Add stimulus here\n        for (i = 0; i < 4; i = i + 1) begin\n            {in1, in2, select} = i;  // Apply test vectors\n            #10;  // Wait 10 time units\n\n            // Check the output and display the result\n            if ((select == 0 && out == in1) || (select == 1 && out == in2)) begin\n                $display(\"Test %d passed\", i);\n            end else begin\n                $display(\"Test %d failed!\", i);\n            end\n        end\n        \n        // Additional test case: inputs are the same but select toggles\n        in1 = 1; in2 = 1;\n        select = 0;  // First check with select 0\n        #10;\n        if (out == in1) begin\n            $display(\"Test 4 passed\");\n        end else begin\n            $display(\"Test 4 failed!\");\n        end\n        \n        select = 1;  // Now check with select 1\n        #10;\n        if (out == in2) begin\n            $display(\"Test 5 passed!\");\n        end else begin\n            $display(\"Test 5 failed!\");\n        end\n\n        $finish;  // Terminate simulation\n    end\nendmodule\n\n\n```\n"
+  },
+  {
+   "role": "user",
+   "content": "// Generate module mux2_1 with this exact interface:\nmodule mux2_1(input wire in1, input wire in2, input wire select, output wire out);\n// code\nendmodule\n\n\nAlso optimize the module for better coarse Yosys-estimated PPA without a liberty file. Output ONLY the full Verilog-2001 module. Do not use Markdown fences."
+  }
+ ],
+ "response": "module mux2_1(input wire in1, input wire in2, input wire select, output wire out);\n    assign out = select ? in2 : in1;\nendmodule\n",
+ "responder": "claude-opus-5-5 (Claude Code session; recorded for replay)"
+}
